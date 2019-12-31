@@ -1,0 +1,7 @@
+jackett:
+  endpoint: "http://localhost:9117/api/v2.0/indexers/all/results?apikey=[API_KEY]&Query"
+
+transmission:
+  endpoint: "http://localhost:9091/transmission/rpc/"
+  username: "transmission"
+  password: "password"
