@@ -89,6 +89,8 @@ def get_magnet_link(results_max,pick):
     response = requests.get(results_max[int(pick)]['Link'], allow_redirects=False)
     magnet_link = response.headers['Location']
 
+    print(magnet_link)
+
     # Didn't receive magnet link?
     if magnet_link.startswith('magnet:') == False:
         print("[ERROR] Jackett didn't return magnet link")
@@ -128,6 +130,9 @@ def main():
 
         # Get magnet link
         magnet_link = get_magnet_link(results_max,pick)
+
+        # Give user chance to grab magnet link and bail
+        input()
 
         # Add magnet link in Transmission
         try:
