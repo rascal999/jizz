@@ -132,7 +132,11 @@ def main():
         magnet_link = get_magnet_link(results_max,pick)
 
         # Give user chance to grab magnet link and bail
-        input()
+        confirm = input("Continue? [Y/n] ")
+
+        if confirm == "n" or confirm == "N":
+            print("Exiting..")
+            sys.exit(1)
 
         # Add magnet link in Transmission
         try:
